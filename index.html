@@ -19,7 +19,7 @@
         background-repeat: no-repeat; 
       }
       #page1 {
-        background-image: url('P1cover-bg.jpg');
+        background-image: url('img/P1cover-bg.jpg');
       }
       #page1 img {
         position: absolute;
@@ -30,7 +30,7 @@
       }
       #page2 {
         display: none;
-        background-image: url('P2cover-bg.jpg');
+        background-image: url('img/P2cover-bg.jpg');
       }
       #page2 .container {
         margin: 16vh auto 0;
@@ -54,7 +54,7 @@
       }
       #page3 {
         visibility: hidden;
-        background-image: url('P3cover-bg.jpg');
+        background-image: url('img/P3cover-bg.jpg');
       }
       #page3 .bottle {
         position: absolute;
@@ -81,43 +81,43 @@
 
   <body>
     <div id="page1" class="bg">
-      <img src="P1cover-button.png" onclick="$('#page2').show()" />
+      <img src="img/P1cover-button.png" onclick="$('#page1 img').attr('src', 'img/P1cover-button-press.png');setTimeout(() => $('#page2').show(), 200)" />
     </div>
     <div id="page2" class="bg" onclick="$('#page3').show()">
       <div class="container">
         <div class="bottle_block"">
-          <img src="bottle.png">
-          <img src="health-cover.jpg" class="cover">
+          <img src="img/bottle.png">
+          <img src="img/health-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
         <div class="bottle_block">
-          <img src="bottle.png">
-          <img src="money-cover.jpg" class="cover">
+          <img src="img/bottle.png">
+          <img src="img/money-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
         <div class="bottle_block">
-          <img src="bottle.png">
-          <img src="love-cover.jpg" class="cover">
+          <img src="img/bottle.png">
+          <img src="img/love-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
         <div class="bottle_block" onclick="selectBottle('study')" >
-          <img src="bottle.png">
-          <img src="study-cover.jpg" class="cover">
+          <img src="img/bottle.png">
+          <img src="img/study-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
         <div class="bottle_block">
-          <img src="bottle.png">
-          <img src="work-cover.jpg" class="cover">
+          <img src="img/bottle.png">
+          <img src="img/work-cover.jpg" class="cover">
         </div>
       </div>
     </div>
     <div id="page3" class="bg">
-      <img src="bottle.png" class="bottle">
+      <img src="img/bottle.png" class="bottle">
       <div class="canvas_container">
         <canvas id="front" height="420px" width="240px"></canvas>
         <canvas id="back" height="420px" width="240px"></canvas>
       </div>
-      <img src="tumo.png" class="tumo">
+      <img src="img/tumo.png" class="tumo">
     </div>
 
     <script type="text/javascript" src="jquery-1.8.3.js"></script>
@@ -127,8 +127,8 @@
         var $frontCanvas = new Canvas2D($("#front"));
         var $backCanvas = new Canvas2D($("#back"));
 
-        $frontCanvas.drawImage(`${name}3.jpg`)
-        $backCanvas.drawImage(`${name}-cover.jpg`)
+        $frontCanvas.drawImage(`img/${name}3.jpg`)
+        $backCanvas.drawImage(`img/${name}-cover.jpg`)
 
         // $frontCanvas.drawImage(`study3.jpg`)
         // $backCanvas.drawImage(`study-cover.jpg`)
@@ -197,7 +197,6 @@
           ps = [];
         }
 
-        // $("#page2").hide()
         $("#page3").css("visibility", "visible")
       }
     </script>
