@@ -4,9 +4,6 @@ function Canvas2D($canvas) {
       height = $canvas[0].height,
       pageOffset = $canvas.offset();
 
-  // context.font = "24px  Verdana, Geneva, sans-serif  ";
-  // context.textBaseline = "top";
-
   this.width = function ()
   {
       return width;
@@ -192,7 +189,6 @@ function Canvas2D($canvas) {
 
   this.overPercent = () => {
     const imageData = context.getImageData(0, 0, width, height).data;
-    console.log(imageData)
     const len = imageData.length;
     let transparentPix = 0;
     for (let i = 3; i < len; i += 4) {
@@ -202,4 +198,91 @@ function Canvas2D($canvas) {
     }
     return (4 * transparentPix)/len;
   }
+}
+
+function selectBottle (name) {
+  $(`#${name} img:first-child`).show()
+
+  $(".canvas_container").css("background-image", `url(https://selfwork.oss-cn-shanghai.aliyuncs.com/final/${name}-${parseInt(Math.random()*3) + 1}.jpg)`)
+  var $backCanvas = new Canvas2D($("#back"));
+
+  // $backCanvas.drawImage(`https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-${name}.jpg`)
+  $backCanvas.drawImage(`img/${name}-cover.jpg`)
+
+  var isStart = false;
+  var startp = {};
+  var ps = [];
+
+  $("#back").on('touchstart', function (event)
+  {
+    isStart = true;
+    startp = $backCanvas.getCanvasPoint(event.originalEvent.targetTouches[0].pageX, event.originalEvent.targetTouches[0].pageY);
+  }).on('touchmove', function (event) {
+    if (!isStart) return;
+     // console.log(event.clientX , event.clientY);、
+     // console.log(event.pageX, event.pageY);
+    var p = $backCanvas.getCanvasPoint(event.originalEvent.targetTouches[0].pageX, event.originalEvent.targetTouches[0].pageY);
+    // var tmp = {};
+    var k;
+    //startp p
+    if (p.x > startp.x)
+    {
+      k = (p.y - startp.y) / (p.x - startp.x);
+      // k = Math.abs(k);
+      // console.log(k);
+      for (var i = startp.x; i < p.x; i += 5) {
+        // tmp.x = i;
+        // tmp.y = ;
+        $backCanvas.clearRect({x: i, y: (startp.y + (i - startp.x) * k)}, {});
+        // ps.push(tmp);
+      }
+    } else {
+      k = (p.y - startp.y) / (p.x - startp.x);
+      // k = Math.abs(k);
+      for (var i = startp.x; i > p.x; i -= 5)
+      {
+        // tmp.x = i;
+        // tmp.y = startp.y - ( startp.x - i ) * k;
+        // ps.push(tmp);
+        $backCanvas.clearRect({x: i, y: (startp.y + ( i - startp.x  ) * k)}, {});
+      }
+    }
+    startp = p;
+    // ps.push(p);
+    // redraw(ps);
+  }).on('touchend', function (event) {
+    isStart = false;
+    if ($backCanvas.overPercent()) {
+      $("#back").remove();
+      $(".canvas_container").animate({
+        height: '100vh',
+        width: '100vw',
+        'margin-left': 0,
+        top: 0,
+        left: 0
+      }, () => {
+        $(".canvas_container").css("background-color", "rgba(0,0,0,0.7)");
+      })
+      $(".canvas_container").addClass("container_full");
+    }
+  });
+
+  function redraw (ps) {
+    for (var i = 0; i + 1 < ps.length; i++) {
+      var start = ps[i];
+//          var end = ps[i + 1];
+      $backCanvas.clearRect(start, {});
+    }
+    startp = ps[ps.length - 1];
+    ps = [];
+  }
+
+  setTimeout(() => {
+    $("#page3").css("visibility", "visible");
+    $("#page3 .hand").animate({
+      right: '40vw',
+      top: '50vh'
+    }, 800)
+    setTimeout(() => $("#page3 .cover").fadeOut(), 800)
+  }, 200)
 }

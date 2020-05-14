@@ -4,201 +4,65 @@
     <title>橘橘如律令 事事美年达</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <style type="text/css">
-      html, body {
-        margin: 0;
-      }
-      .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; 
-      }
-      #page1 {
-        background-image: url('img/P1cover-bg.jpg');
-      }
-      #page1 img {
-        position: absolute;
-        bottom: 5vh;
-        width: 50vw;
-        left: 50%;
-        margin-left: -25vw;
-      }
-      #page2 {
-        display: none;
-        background-image: url('img/P2cover-bg.jpg');
-      }
-      #page2 .container {
-        margin: 16vh auto 0;
-        height: 81vh;
-        width: 81vw;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      #page2 .container .bottle_block {
-        position: relative;
-        width: 27vw;
-      }
-      #page2 .container .bottle_block img {
-        position: absolute;
-        width: 100%;
-      }
-      #page2 .container .bottle_block img.cover {
-        width: 21vw;
-        margin: 6vw 3vw;
-        border-radius: 8px;
-      }
-      #page3 {
-        visibility: hidden;
-        background-image: url('img/P3cover-bg.jpg');
-      }
-      #page3 .bottle {
-        position: absolute;
-        width: 83vw;
-        margin: 4vw 10vw;
-      }
-      #page3 .canvas_container {
-        position: relative;
-        margin: 21vw auto 0;
-        width: 240px;
-        height: 420px;
-      }
-      #page3 .canvas_container canvas {
-        position: absolute;
-        border-radius: 24px;
-      }
-      #page3 .tumo {
-        display: block;
-        margin: 20vw auto 0;
-        width: 16vw;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
-    <div id="page1" class="bg">
-      <img src="img/P1cover-button.png" onclick="$('#page1 img').attr('src', 'img/P1cover-button-press.png');setTimeout(() => $('#page2').show(), 200)" />
+    <div id="page1">
+      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/btn-bg.jpg">
+      <img class="button after" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/btn-after.png" hidden>
+      <img class="button" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/btn-before.png" onclick="$('#page1 .button').hide();$('#page1 .button.after').show();setTimeout(() => $('#page2').show(), 200)">
     </div>
     <div id="page2" class="bg" onclick="$('#page3').show()">
       <div class="container">
-        <div class="bottle_block"">
-          <img src="img/bottle.png">
+        <div class="bottle_block" id="health" onclick="selectBottle('health')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-health.jpg" class="cover"> -->
           <img src="img/health-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
-        <div class="bottle_block">
-          <img src="img/bottle.png">
-          <img src="img/money-cover.jpg" class="cover">
+        <div class="bottle_block" id="wealth" onclick="selectBottle('wealth')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-wealth.jpg" class="cover"> -->
+          <img src="img/wealth-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
-        <div class="bottle_block">
-          <img src="img/bottle.png">
+        <div class="bottle_block" id="love" onclick="selectBottle('love')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-love.jpg" class="cover"> -->
           <img src="img/love-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
-        <div class="bottle_block" onclick="selectBottle('study')" >
-          <img src="img/bottle.png">
+        <div class="bottle_block" id="study" onclick="selectBottle('study')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-study.jpg" class="cover"> -->
           <img src="img/study-cover.jpg" class="cover">
         </div>
         <div class="bottle_block"></div>
-        <div class="bottle_block">
-          <img src="img/bottle.png">
-          <img src="img/work-cover.jpg" class="cover">
+        <div class="bottle_block" id="career" onclick="selectBottle('career')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-career.jpg" class="cover"> -->
+          <img src="img/career-cover.jpg" class="cover">
         </div>
       </div>
     </div>
     <div id="page3" class="bg">
-      <img src="img/bottle.png" class="bottle">
+      <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png" class="bottle">
       <div class="canvas_container">
-        <canvas id="front" height="420px" width="240px"></canvas>
         <canvas id="back" height="420px" width="240px"></canvas>
       </div>
-      <img src="img/tumo.png" class="tumo">
+      <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-paw.png" class="tumo">
+      <div class="cover">
+        <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-hand.png" class="hand">
+      </div>
     </div>
 
-    <script type="text/javascript" src="jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="canvas2d.js"></script>
-    <script type="text/javascript">
-      function selectBottle (name) {
-        var $frontCanvas = new Canvas2D($("#front"));
-        var $backCanvas = new Canvas2D($("#back"));
-
-        $frontCanvas.drawImage(`img/${name}3.jpg`)
-        $backCanvas.drawImage(`img/${name}-cover.jpg`)
-
-        // $frontCanvas.drawImage(`study3.jpg`)
-        // $backCanvas.drawImage(`study-cover.jpg`)
-
-        var isStart = false;
-        var startp = {};
-        var ps = [];
-
-        $("#back").on('touchstart', function (event)
-        {
-          isStart = true;
-          startp = $backCanvas.getCanvasPoint(event.originalEvent.targetTouches[0].pageX, event.originalEvent.targetTouches[0].pageY);
-        }).on('touchmove', function (event) {
-          if (!isStart) return;
-           // console.log(event.clientX , event.clientY);、
-           // console.log(event.pageX, event.pageY);
-          var p = $backCanvas.getCanvasPoint(event.originalEvent.targetTouches[0].pageX, event.originalEvent.targetTouches[0].pageY);
-          // var tmp = {};
-          var k;
-          //startp p
-          if (p.x > startp.x)
-          {
-            k = (p.y - startp.y) / (p.x - startp.x);
-            // k = Math.abs(k);
-            // console.log(k);
-            for (var i = startp.x; i < p.x; i += 5) {
-              // tmp.x = i;
-              // tmp.y = ;
-              $backCanvas.clearRect({x: i, y: (startp.y + (i - startp.x) * k)}, {});
-              // ps.push(tmp);
-            }
-          } else {
-            k = (p.y - startp.y) / (p.x - startp.x);
-            // k = Math.abs(k);
-            for (var i = startp.x; i > p.x; i -= 5)
-            {
-              // tmp.x = i;
-              // tmp.y = startp.y - ( startp.x - i ) * k;
-              // ps.push(tmp);
-              $backCanvas.clearRect({x: i, y: (startp.y + ( i - startp.x  ) * k)}, {});
-            }
-          }
-          startp = p;
-          // ps.push(p);
-          // redraw(ps);
-        }).on('touchend', function (event) {
-          isStart = false;
-          $backCanvas.overPercent()
-          $("#back").remove()
-          // $("#container").animate({
-          //   height: '100vh',
-          //   width: '100vw',
-          //   'margin-left': 0,
-          //   top: 0,
-          //   left: 0
-          // })
-        });
-
-        function redraw (ps) {
-          for (var i = 0; i + 1 < ps.length; i++) {
-            var start = ps[i];
-//          var end = ps[i + 1];
-            $backCanvas.clearRect(start, {});
-          }
-          startp = ps[ps.length - 1];
-          ps = [];
-        }
-
-        $("#page3").css("visibility", "visible")
-      }
-    </script>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
