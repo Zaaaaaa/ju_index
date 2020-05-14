@@ -206,8 +206,8 @@ function selectBottle (name) {
   $(".canvas_container").css("background-image", `url(https://selfwork.oss-cn-shanghai.aliyuncs.com/final/${name}-${parseInt(Math.random()*3) + 1}.jpg)`)
   var $backCanvas = new Canvas2D($("#back"));
 
-  $backCanvas.drawImage(`https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-${name}.jpg`)
-  // $backCanvas.drawImage(`img/${name}-cover.jpg`)
+  // $backCanvas.drawImage(`https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-${name}.jpg`)
+  $backCanvas.drawImage(`img/${name}-cover.jpg`)
 
   var isStart = false;
   var startp = {};

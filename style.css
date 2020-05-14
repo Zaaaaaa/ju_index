@@ -61,6 +61,7 @@ body:before {
 #page2 .container .bottle_block {
   position: relative;
   width: 27vw;
+  -webkit-appearance: none;
 }
 #page2 .container .bottle_block img {
   position: absolute;
