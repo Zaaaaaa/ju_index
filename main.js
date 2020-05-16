@@ -222,6 +222,7 @@ function selectBottle (name) {
     isStart = true;
     startp = $backCanvas.getCanvasPoint(event.originalEvent.targetTouches[0].pageX, event.originalEvent.targetTouches[0].pageY);
   }).on('touchmove', function (event) {
+    event.preventDefault();
     if (!isStart) return;
      // console.log(event.clientX , event.clientY);、
      // console.log(event.pageX, event.pageY);
