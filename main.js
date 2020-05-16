@@ -184,7 +184,6 @@ function Canvas2D($canvas) {
   }
 
   this.overPercent = () => {
-    return true;
     const imageData = context.getImageData(0, 0, width, height).data;
     const len = imageData.length;
     let transparentPix = 0;
