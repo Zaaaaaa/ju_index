@@ -196,6 +196,15 @@ function Canvas2D($canvas) {
   }
 }
 
+function clickStart () {
+  $('#page1 .button').hide();
+  $('#page1 .button.after').show();
+  setTimeout(() => {
+    $('#page1').hide();
+    $('#page2').show()
+  }, 200)
+}
+
 function selectBottle (name) {
   $(`#${name} img:first-child`).show()
 
@@ -280,7 +289,6 @@ function selectBottle (name) {
       right: '40vw',
       top: '50vh'
     }, 800)
-    $("body").addClass("fixed");
     setTimeout(() => $("#page3 .cover").fadeOut(), 800)
   }, 200)
 }
