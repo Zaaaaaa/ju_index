@@ -1,12 +1,14 @@
 html, body {
-  display: block;
+  /*display: block;*/
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  /*position: fixed;*/
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-body:before {
+.fixed:before {
   width: 100%;
   height: 100%;
   content: ' ';
@@ -99,16 +101,25 @@ body:before {
   margin: 21vw auto 0;
   width: 240px;
   height: 420px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #page3 .container_full {
   position: fixed;
   background-size: contain;
   border-radius: 0;
   margin: 0;
+}
+#page3 .card {
+  width: auto;
+  height: 100%;
+}
+#page3 .card_full {
+  width: 100vw;
+  height: 178vw;
 }
 #page3 .canvas_container canvas {
   position: absolute;

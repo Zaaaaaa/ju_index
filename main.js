@@ -203,10 +203,9 @@ function Canvas2D($canvas) {
 function selectBottle (name) {
   $(`#${name} img:first-child`).show()
 
-  $(".canvas_container").css("background-image", `url(https://selfwork.oss-cn-shanghai.aliyuncs.com/final/${name}-${parseInt(Math.random()*3) + 1}.jpg)`)
+  $(".canvas_container .card").attr("src", `https://selfwork.oss-cn-shanghai.aliyuncs.com/final/${name}-${parseInt(Math.random()*3) + 1}.jpg`)
   var $backCanvas = new Canvas2D($("#back"));
 
-  // $backCanvas.drawImage(`https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-${name}.jpg`)
   $backCanvas.drawImage(`img/${name}-cover.jpg`)
 
   var isStart = false;
@@ -259,11 +258,12 @@ function selectBottle (name) {
         width: '100vw',
         'margin-left': 0,
         top: 0,
-        left: 0
+        left: 0,
       }, () => {
         $(".canvas_container").css("background-color", "rgba(0,0,0,0.7)");
       })
       $(".canvas_container").addClass("container_full");
+      $(".card").addClass("card_full");
     }
   });
 
@@ -283,6 +283,7 @@ function selectBottle (name) {
       right: '40vw',
       top: '50vh'
     }, 800)
+    $("body").addClass("fixed");
     setTimeout(() => $("#page3 .cover").fadeOut(), 800)
   }, 200)
 }
