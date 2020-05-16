@@ -179,12 +179,8 @@ function Canvas2D($canvas) {
       return this;
   };
 
-  this.drawImage = (src) => {
-    const img = new Image()
-    img.src = src
-    img.onload = () => {
-      context.drawImage(img, 0, 0, img.width, img.height, 0, 0, width, height)
-    }
+  this.drawImage = (img) => {
+    context.drawImage(img, 0, 0, 467, 799, 0, 0, width, height)
   }
 
   this.overPercent = () => {
@@ -207,7 +203,7 @@ function selectBottle (name) {
   $(".canvas_container .card").attr("src", `https://selfwork.oss-cn-shanghai.aliyuncs.com/final/${name}-${parseInt(Math.random()*3) + 1}.jpg`)
   var $backCanvas = new Canvas2D($("#back"));
 
-  $backCanvas.drawImage(`img/${name}-cover.jpg`)
+  $backCanvas.drawImage($(`#${name} .cover`)[0])
 
   var isStart = false;
   var startp = {};
@@ -264,6 +260,7 @@ function selectBottle (name) {
         width: '100vw',
         height: '178vw',
         top: 'calc((100vh - 178vw)/2)',
+        // top: `${($(document).height() - 1.78*$(document).width())/2}px`,
       })
     }
   });
