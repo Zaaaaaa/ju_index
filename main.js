@@ -287,7 +287,6 @@ function selectBottle (name) {
 
   setTimeout(() => {
     $("#page2").hide();
-    $("body").css("position", "fixed");
     $("#page3").css("visibility", "visible");
     $("#page3 .hand").animate({
       right: '40vw',
