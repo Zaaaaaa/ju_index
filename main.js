@@ -183,7 +183,7 @@ function Canvas2D($canvas) {
     context.drawImage(img, 0, 0, 467, 799, 0, 0, width, height)
   }
 
-  this.overPercent = () => {
+  this.overPercent = (percent) => {
     const imageData = context.getImageData(0, 0, width, height).data;
     const len = imageData.length;
     let transparentPix = 0;
@@ -192,7 +192,7 @@ function Canvas2D($canvas) {
             transparentPix++;
         }
     }
-    return (4 * transparentPix)/len;
+    return (4 * transparentPix)/len >= percent;
   }
 }
 
@@ -256,7 +256,8 @@ function selectBottle (name) {
     // redraw(ps);
   }).on('touchend', function (event) {
     isStart = false;
-    if ($backCanvas.overPercent()) {
+    if ($backCanvas.overPercent(0.95)) {
+      $("body").css("position", "");
       $("#back").remove();
       $(".canvas_container").addClass("container_full");
       $(".card").css({
