@@ -77,6 +77,9 @@ html, body {
 #page3 {
   visibility: hidden;
   background-image: url('https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-bg.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #page3 .cover {
   position: absolute;
@@ -93,8 +96,11 @@ html, body {
 }
 #page3 .bottle {
   position: absolute;
-  width: 83vw;
-  margin: 4vw 10.5vw;
+  top: 50%;
+  left: 50%;
+  width: 310px;
+  margin-left: -148px;
+  margin-top: -300px;
 }
 #page3 .canvas_container {
   position: relative;
@@ -106,10 +112,16 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  left: 50%;
+  margin-left: -120px;
 }
 #page3 .container_full {
   position: fixed;
-  background-size: contain;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0;
   margin: 0;
 }
@@ -117,16 +129,12 @@ html, body {
   width: auto;
   height: 100%;
 }
-#page3 .card_full {
-  width: 100vw;
-  height: 178vw;
-}
 #page3 .canvas_container canvas {
   position: absolute;
   border-radius: 24px;
 }
 #page3 .tumo {
   display: block;
-  margin: 20vw auto 0;
-  width: 16vw;
+  margin: 75px auto 0;
+  width: 60px;
 }

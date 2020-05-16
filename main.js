@@ -188,6 +188,7 @@ function Canvas2D($canvas) {
   }
 
   this.overPercent = () => {
+    return true;
     const imageData = context.getImageData(0, 0, width, height).data;
     const len = imageData.length;
     let transparentPix = 0;
@@ -253,17 +254,17 @@ function selectBottle (name) {
     isStart = false;
     if ($backCanvas.overPercent()) {
       $("#back").remove();
-      $(".canvas_container").animate({
-        height: '100vh',
-        width: '100vw',
-        'margin-left': 0,
-        top: 0,
-        left: 0,
-      }, () => {
-        $(".canvas_container").css("background-color", "rgba(0,0,0,0.7)");
-      })
       $(".canvas_container").addClass("container_full");
-      $(".card").addClass("card_full");
+      $(".card").css({
+        "position": "absolute",
+        "width": "240px",
+        "height": "420px",
+      })
+      $(".card").animate({
+        width: '100vw',
+        height: '178vw',
+        top: 'calc((100vh - 178vw)/2)',
+      })
     }
   });
 
