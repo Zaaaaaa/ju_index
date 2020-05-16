@@ -284,11 +284,12 @@ function selectBottle (name) {
   }
 
   setTimeout(() => {
+    $("body").addClass("fixed");
     $("#page3").css("visibility", "visible");
     $("#page3 .hand").animate({
       right: '40vw',
       top: '50vh'
-    }, 800)
-    setTimeout(() => $("#page3 .cover").fadeOut(), 800)
+    }, 1000)
+    setTimeout(() => $("#page3 .cover").fadeOut(), 1000)
   }, 200)
 }
