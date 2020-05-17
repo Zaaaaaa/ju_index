@@ -289,10 +289,5 @@ function selectBottle (name) {
   setTimeout(() => {
     $("#page2").hide();
     $("#page3").css("visibility", "visible");
-    $("#page3 .hand").animate({
-      right: '40vw',
-      top: '50vh'
-    }, 1000)
-    setTimeout(() => $("#page3 .cover").fadeOut(), 1000)
   }, 200)
 }

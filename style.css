@@ -94,6 +94,12 @@ body:before {
   width: 20vw;
   top: 40vh;
   right: 20vw;
+  animation: move 2s infinite;
+  -webkit-animation: move 2s infinite;
+}
+@keyframes move {
+    0% { right: 20vw; top: 40vh; }
+  80% { right: 40vw; top: 50vh; }
 }
 #page3 .bottle {
   position: absolute;
