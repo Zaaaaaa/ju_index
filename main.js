@@ -33,8 +33,18 @@ function Canvas2D($canvas) {
 
   this.clearRect = function (start, end)
   {
-      const pen = 10;
-      context.clearRect(start.x - pen, start.y - pen, pen * 2, pen * 2);
+      var x = start.x;
+      var y = start.y;
+      const radius = 12;
+      for(let i=0; i<=radius; i=i+2){
+          var calcWidth = radius - i;
+          var calcHeight = Math.sqrt(radius * radius - calcWidth * calcWidth);
+          var posX = x - calcWidth;
+          var posY = y - calcHeight;
+          var widthX = 2 * calcWidth;
+          var heightY = 2 * calcHeight;
+          context.clearRect(posX, posY, widthX, heightY);
+      }
       return this;
   };
 
