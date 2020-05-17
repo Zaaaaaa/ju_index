@@ -133,6 +133,7 @@ body:before {
   margin: 0;
 }
 #page3 .card {
+  display: block;
   width: auto;
   height: 100%;
 }
