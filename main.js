@@ -33,7 +33,8 @@ function Canvas2D($canvas) {
 
   this.clearRect = function (start, end)
   {
-      context.clearRect(start.x - 15, start.y - 15, 30, 30);
+      const pen = 10;
+      context.clearRect(start.x - pen, start.y - pen, pen * 2, pen * 2);
       return this;
   };
 
@@ -199,9 +200,9 @@ function Canvas2D($canvas) {
 function clickStart () {
   $('#page1 .button').hide();
   $('#page1 .button.after').show();
+  $('#page2').show();
   setTimeout(() => {
-    $('#page1').hide();
-    $('#page2').show()
+    $('#page1').fadeOut();
   }, 200)
 }
 
