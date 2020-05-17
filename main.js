@@ -258,7 +258,7 @@ function selectBottle (name) {
     // redraw(ps);
   }).on('touchend', function (event) {
     isStart = false;
-    if ($backCanvas.overPercent(0.95)) {
+    if ($backCanvas.overPercent(0.6)) {
       $("body").css("position", "");
       $("#back").remove();
       $(".canvas_container").addClass("container_full");
