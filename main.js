@@ -277,6 +277,7 @@ function selectBottle (name) {
         "width": "240px",
         "height": "420px",
       })
+      $(".bottle").hide();
       $(".card").animate({
         width: '100vw',
         height: '178vw',
