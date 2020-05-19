@@ -213,7 +213,13 @@ function clickStart () {
   $('#page2').show();
   setTimeout(() => {
     $('#page1').fadeOut();
-  }, 200)
+    $('#wealth, #career').animate({
+      left: '54vw'
+    }, 'normal', 'swing');
+    $('#love').animate({
+      left: '27vw'
+    }, 'normal', 'swing');
+  }, 200);
 }
 
 function selectBottle (name) {
@@ -299,5 +305,8 @@ function selectBottle (name) {
   setTimeout(() => {
     $("#page2").hide();
     $("#page3").css("visibility", "visible");
+    setTimeout(() => {
+      $("#page3 .cover").fadeOut();
+    }, 1200)
   }, 200)
 }

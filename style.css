@@ -55,6 +55,7 @@ body:before {
   background-image: url('https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/pickone_bg.jpg');
 }
 #page2 .container {
+  position: relative;
   margin: 16vh auto 0;
   height: 81vh;
   width: 81vw;
@@ -62,9 +63,17 @@ body:before {
   flex-wrap: wrap;
 }
 #page2 .container .bottle_block {
-  position: relative;
+  position: absolute;
   width: 27vw;
   -webkit-appearance: none;
+  left: 0;
+  top: 0;
+}
+#page2 .container #love {
+  top: 27vh;
+}
+#page2 .container #study, #page2 .container #career {
+  top: 54vh;
 }
 #page2 .container .bottle_block img {
   position: absolute;
