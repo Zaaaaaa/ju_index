@@ -213,12 +213,14 @@ function clickStart () {
   $('#page2').show();
   setTimeout(() => {
     $('#page1').fadeOut();
-    $('#wealth, #career').animate({
-      left: '54vw'
-    }, 'normal', 'swing');
-    $('#love').animate({
-      left: '27vw'
-    }, 'normal', 'swing');
+    setTimeout(() => {
+      $('#wealth, #career').animate({
+        left: '54vw'
+      }, 'normal', 'swing');
+      $('#love').animate({
+        left: '27vw'
+      }, 'normal', 'swing');    
+    }, 400);
   }, 200);
 }
 
