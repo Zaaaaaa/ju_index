@@ -28,6 +28,11 @@ body:before {
   background-position: center;
   background-repeat: no-repeat;
 }
+.bg-img {
+  height: 100vh;
+  width: auto;
+  position: absolute;
+}
 #page1 {
   position: absolute;
   z-index: 2;
@@ -38,11 +43,6 @@ body:before {
   display: flex;
   justify-content: center;
   overflow: hidden;
-}
-#page1 .bg-img {
-  height: 100vh;
-  width: auto;
-  position: absolute;
 }
 #page1 .button {
   position: absolute;
