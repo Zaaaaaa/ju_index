@@ -322,3 +322,9 @@ function selectBottle (name) {
     }, 1200)
   }, 200)
 }
+
+$(function() {
+  setTimeout(() =>{
+    $(".btn-before").fadeIn()
+  }, 1000)
+})
