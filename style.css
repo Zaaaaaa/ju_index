@@ -67,15 +67,15 @@ body:before {
   position: absolute;
   width: 27vw;
   -webkit-appearance: none;
-  left: 0;
-  top: 0;
+  left: 27vw;
+  top: 27vh;
 }
-#page2 .container #love {
+/*#page2 .container #love {
   top: 27vh;
 }
 #page2 .container #study, #page2 .container #career {
   top: 54vh;
-}
+}*/
 #page2 .container .bottle_block img {
   position: absolute;
   width: 100%;

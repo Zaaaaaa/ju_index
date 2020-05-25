@@ -214,11 +214,21 @@ function clickStart () {
   setTimeout(() => {
     $('#page1').fadeOut();
     setTimeout(() => {
-      $('#wealth, #career').animate({
-        left: '54vw'
+      $('#health').animate({
+        left: '0',
+        top: '0',
       }, 'normal', 'swing');
-      $('#love').animate({
-        left: '27vw'
+      $('#wealth').animate({
+        left: '54vw',
+        top: '0',
+      }, 'normal', 'swing');
+      $('#study').animate({
+        left: '0',
+        top: '54vh',
+      }, 'normal', 'swing');
+      $('#career').animate({
+        left: '54vw',
+        top: '54vh',
       }, 'normal', 'swing');    
     }, 400);
   }, 200);
