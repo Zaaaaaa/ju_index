@@ -33,6 +33,10 @@ body:before {
   width: auto;
   position: absolute;
 }
+.gif {
+  height: auto;
+  position: absolute;
+}
 #page1 {
   position: absolute;
   z-index: 2;

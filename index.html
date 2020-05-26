@@ -10,36 +10,30 @@
   <body>
     <div id="page1">
       <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/btn-bg.jpg">
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/title.gif" >
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/orange-up-right.gif" >
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/left-drinking.gif" >
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/bottom-left-orange.gif" >
+      <img class="gif" style="width:100vw;top:8vw" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/title.gif" >
+      <img class="gif" style="width:20vw;top:0;right:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/up-right-orange.gif" >
+      <img class="gif" style="width:35vw;top:56vw;left:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/left-drinking.gif" >
+      <img class="gif" style="width:32vw;bottom:12vw;left:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/bottom-left-orange.gif" >
       <img class="button after" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/btn-after.png" hidden>
       <img class="button btn-before" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/first/btn-before.png" onclick="clickStart()" hidden>
     </div>
     <div id="page2" class="bg">
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/bottom-right-orange.gif">
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/left-orange.gif" >
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/up-right-drinking.gif" >
-      <img class="bg-img" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/lip.gif" >
+      <img class="gif" style="width:24vw;top:100vw;right:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/bottom-right-orange.gif">
+      <img class="gif" style="width:24vw;top:80vw;left:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/left-orange.gif" >
+      <img class="gif" style="width:22vw;top:12vw;right:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/up-right-drinking.gif" >
+      <img class="gif" style="width:30vw;top:0;left:0" src="https://selfwork.oss-cn-shanghai.aliyuncs.com/pickone/lip.gif" >
       <div class="container">
-        <div class="bottle_block" id="health" onclick="selectBottle('health')">
-          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
-          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
-          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-health.jpg" class="cover"> -->
-          <img src="img/health-cover.jpg" class="cover">
-        </div>
-        <div class="bottle_block" id="wealth" onclick="selectBottle('wealth')">
-          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
-          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
-          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-wealth.jpg" class="cover"> -->
-          <img src="img/wealth-cover.jpg" class="cover">
-        </div>
         <div class="bottle_block" id="love" onclick="selectBottle('love')">
           <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
           <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
           <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-love.jpg" class="cover"> -->
           <img src="img/love-cover.jpg" class="cover">
+        </div>
+        <div class="bottle_block" id="career" onclick="selectBottle('career')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-career.jpg" class="cover"> -->
+          <img src="img/career-cover.jpg" class="cover">
         </div>
         <div class="bottle_block" id="study" onclick="selectBottle('study')">
           <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
@@ -47,11 +41,17 @@
           <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-study.jpg" class="cover"> -->
           <img src="img/study-cover.jpg" class="cover">
         </div>
-        <div class="bottle_block" id="career" onclick="selectBottle('career')">
+        <div class="bottle_block" id="wealth" onclick="selectBottle('wealth')">
           <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
           <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
-          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-career.jpg" class="cover"> -->
-          <img src="img/career-cover.jpg" class="cover">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-wealth.jpg" class="cover"> -->
+          <img src="img/wealth-cover.jpg" class="cover">
+        </div>
+        <div class="bottle_block" id="health" onclick="selectBottle('health')">
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-grow.png" hidden>
+          <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/bottle-no-grow.png">
+          <!-- <img src="https://selfwork.oss-cn-shanghai.aliyuncs.com/wipe/wipe-health.jpg" class="cover"> -->
+          <img src="img/health-cover.jpg" class="cover">
         </div>
       </div>
     </div>

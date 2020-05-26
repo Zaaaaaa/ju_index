@@ -218,18 +218,24 @@ function clickStart () {
         left: '0',
         top: '0',
       }, 'normal', 'swing');
-      $('#wealth').animate({
-        left: '54vw',
-        top: '0',
-      }, 'normal', 'swing');
-      $('#study').animate({
-        left: '0',
-        top: '54vh',
-      }, 'normal', 'swing');
-      $('#career').animate({
-        left: '54vw',
-        top: '54vh',
-      }, 'normal', 'swing');    
+      setTimeout(() => {
+        $('#wealth').animate({
+          left: '54vw',
+          top: '0',
+        }, 'normal', 'swing');
+        setTimeout(() => {
+          $('#study').animate({
+            left: '0',
+            top: '54vh',
+          }, 'normal', 'swing');
+          setTimeout(() => {
+            $('#career').animate({
+              left: '54vw',
+              top: '54vh',
+            }, 'normal', 'swing');
+          }, 400);
+        }, 400);
+      }, 400);
     }, 400);
   }, 200);
 }
@@ -326,5 +332,5 @@ function selectBottle (name) {
 $(function() {
   setTimeout(() =>{
     $(".btn-before").fadeIn()
-  }, 1000)
+  }, 1500)
 })
