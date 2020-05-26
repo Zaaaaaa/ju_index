@@ -301,12 +301,18 @@ function selectBottle (name) {
         "width": "240px",
         "height": "420px",
       })
-      $(".card").animate({
-        width: '100vw',
-        height: '178vw',
-        top: 'calc((100vh - 178vw)/2)',
-        // top: `${($(document).height() - 1.78*$(document).width())/2}px`,
-      });
+      if ($(document).height() / $(document).width() > 1.78) {
+        $(".card").animate({
+          width: '100vw',
+          height: '178vw',
+          top: 'calc((100vh - 178vw)/2)',
+        });
+      } else { 
+        $(".card").animate({
+          width: '56vh',
+          height: '100vh',
+        });
+      }
     }
   });
 
