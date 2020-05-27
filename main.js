@@ -214,25 +214,25 @@ function clickStart () {
   setTimeout(() => {
     $('#page1').fadeOut();
     setTimeout(() => {
-      $('#health').animate({
+      $('#health').removeClass('flipper').animate({
         left: '0',
         top: '0',
       }, 'normal', 'swing');
       setTimeout(() => {
-        $('#wealth').animate({
+        $('#wealth').removeClass('flipper').animate({
           left: '54vw',
           top: '0',
         }, 'normal', 'swing');
-        setTimeout(() => {
-          $('#study').animate({
-            left: '0',
+        setTimeout(() => { 
+          $('#career').removeClass('flipper').animate({
+            left: '54vw',
             top: '54vh',
           }, 'normal', 'swing');
           setTimeout(() => {
-            $('#career').animate({
-              left: '54vw',
-              top: '54vh',
-            }, 'normal', 'swing');
+            $('#study').removeClass('flipper').animate({
+            left: '0',
+            top: '54vh',
+          }, 'normal', 'swing');
           }, 200);
         }, 200);
       }, 200);
