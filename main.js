@@ -233,9 +233,9 @@ function clickStart () {
               left: '54vw',
               top: '54vh',
             }, 'normal', 'swing');
-          }, 400);
-        }, 400);
-      }, 400);
+          }, 200);
+        }, 200);
+      }, 200);
     }, 400);
   }, 200);
 }
@@ -292,7 +292,7 @@ function selectBottle (name) {
     // redraw(ps);
   }).on('touchend', function (event) {
     isStart = false;
-    if ($backCanvas.overPercent(0.6)) {
+    if ($backCanvas.overPercent(0.5)) {
       $("body").css("position", "");
       $("#back").remove();
       $(".canvas_container").addClass("container_full");
@@ -336,7 +336,13 @@ function selectBottle (name) {
 }
 
 $(function() {
+  if ($(document).height() / $(document).width() < 1.9) {
+    $("#page1 .bg-img").css({
+      width: '100vw',
+      height: 'auto',
+    })
+  }
   setTimeout(() =>{
     $(".btn-before").fadeIn()
-  }, 1500)
+  }, 2000)
 })
