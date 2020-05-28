@@ -335,6 +335,18 @@ function selectBottle (name) {
   }, 200)
 }
 
+document.addEventListener("WeixinJSBridgeReady", function() {
+  document.getElementById('ado').play();
+}, false);
+//解决微信不能播放音频
+if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+  WeixinJSBridge.invoke('getNetworkType', {}, function(res) {
+    audioa = document.getElementById("ado");
+    //音频播放
+    audioa.play();
+  });
+};
+
 $(function() {
   if ($(document).height() / $(document).width() < 1.9) {
     $("#page1 .bg-img").css({
@@ -345,4 +357,7 @@ $(function() {
   setTimeout(() =>{
     $(".btn-before").fadeIn()
   }, 2000)
+
+  var myAuto = document.getElementById('ado');
+  myAuto.play()
 })
